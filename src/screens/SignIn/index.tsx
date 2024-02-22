@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
-import { Text, View, Image } from 'react-native';
+import React from 'react';
+import { Text, View, Image, StatusBar } from 'react-native';
 
+import { ButtonIcon } from '../../components/ButtonIcon';
 import IllustrationImg from '../../assets/illustration.png';
 import { styles } from './styles';
 
 export function SignIn() {
-  const [text, setText] = useState('');
-
   return (
     <View style={styles.container}>
+      <StatusBar 
+        barStyle="light-content"
+        backgroundColor="transparente"
+        translucent
+      />
+
       <Image
         source={IllustrationImg}
         style={styles.image}
-        resizeMode='stretch'
+        resizeMode="stretch"
       />
 
       <View style={styles.content}>
@@ -26,6 +31,8 @@ export function SignIn() {
           Crie grupos para jogar seus games {`\n`}
           favoritos com seus amigos
         </Text>
+
+        <ButtonIcon title="Entrar com Discord" activeOpacity={0.7} />
       </View>
     </View>
   );
